@@ -6,13 +6,12 @@ from flask import Flask, render_template, redirect, abort, request, url_for, \
 from flask_login import LoginManager, login_user, current_user, logout_user, \
     login_required
 
-from data import youtube, tg, news
-
-from data import db_session, users_api, posts_api
-from data.users import User
-from data.posts import Post, AnonimPost
-from data.comments import Comment
-from data.categories import Category
+from models import db_session
+from api import posts_api, users_api
+from models.users import User
+from models.posts import Post, AnonimPost
+from models.comments import Comment
+from models.categories import Category
 from PIL import Image
 import os
 
@@ -20,7 +19,8 @@ from forms.user import RegisterForm, LoginForm
 from forms.post import PostForm
 from forms.anonim_post import AnonimPostForm
 from forms.comment import CommentMainForm, CommentSecondForm
-from data import functions
+from utils import functions
+from clients import tg, youtube, news
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -84,7 +84,7 @@ def liked_posts():
                                title='Понравившиеся посты', posts=posts)
     else:
         return render_template("message.html",
-                               title='Понравившиеся посты',
+                                  title='Понравившиеся посты',
                                message='Понравившихся постов нет')
 
 
@@ -593,7 +593,7 @@ def search():
 
 
 if __name__ == '__main__':
-    db_session.global_init("db/data.db")
+    db_session.global_init(os.path.join(os.path.dirname(__file__), "db\\data.db").replace('\\', '/'))
     app.register_blueprint(users_api.blueprint)
     app.register_blueprint(posts_api.blueprint)
 

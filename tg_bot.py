@@ -6,7 +6,7 @@ from telegram import ReplyKeyboardMarkup
 from telegram.ext import Updater, MessageHandler, Filters
 from telegram.ext import CommandHandler, ConversationHandler
 
-from data.config import TG_TOKEN as TOKEN, SITE
+from config import TG_TOKEN as TOKEN, SITE
 
 
 def start(update, context):

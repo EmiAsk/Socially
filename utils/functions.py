@@ -1,5 +1,5 @@
 from typing import List
-from .comments import Comment
+from models.comments import Comment
 from flask import url_for
 
 HTML_COMMENTS = '''<div class="mar-btm">

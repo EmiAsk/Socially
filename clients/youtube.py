@@ -1,6 +1,6 @@
 from requests import get
 import os
-from .config import YOUTUBE_API_KEY as YT_API_KEY
+from config import YOUTUBE_API_KEY as YT_API_KEY
 from datetime import datetime
 
 PATTERN_IN = "%Y-%m-%dT%H:%M:%SZ"

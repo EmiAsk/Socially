@@ -3,8 +3,8 @@ from flask import jsonify, request, make_response
 from sqlalchemy.exc import IntegrityError
 
 
-from . import db_session
-from .posts import Post, AnonimPost
+from models import db_session
+from models.posts import Post, AnonimPost
 
 blueprint = flask.Blueprint(
     'posts_api',

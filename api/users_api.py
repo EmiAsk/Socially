@@ -1,8 +1,8 @@
 import flask
 from flask import jsonify, request
 
-from . import db_session
-from .users import User
+from models import db_session
+from models.users import User
 
 blueprint = flask.Blueprint(
     'users_api',

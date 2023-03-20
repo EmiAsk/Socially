@@ -1,7 +1,7 @@
 from datetime import datetime
 import vk_api
 
-from .config import VK_LOGIN, VK_PASSWORD
+from config import VK_LOGIN, VK_PASSWORD
 
 PATTERN_IN = "%Y-%m-%dT%H:%M:%SZ"
 
