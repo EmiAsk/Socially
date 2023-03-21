@@ -37,6 +37,14 @@
 +	Дополнительный интерфейс сервиса в виде Телеграм Бота для создания анонимных постов
 +	Вспомогательные ассоциативные сущности-таблицы в БД
 
+### Использованные технологии / библиотеки
+- Flask
+- SQLAlchemy
+- requests
+- telegram-bot-api
+- Flask-WTF
+- vk-api
+
 ### Интерфейс
 ![image](https://user-images.githubusercontent.com/74973350/226669555-5b4de124-b661-44f0-892e-11a15654ce08.png)
 ![image](https://user-images.githubusercontent.com/74973350/226669575-408f5c3f-94a4-433e-b29e-b7f4dfe9a07b.png)
